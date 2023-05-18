@@ -8,9 +8,12 @@
   --accent-color: #e7e9fc;
   --stroke-logo-color: #8e8f99;
   --green-hover-color: #31d0aa;
+  --modal-background-color: #fcfcfc;
 }
 
 body {
+  /* padding-top: 72px; */
+
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -57,6 +60,12 @@ img {
   border-bottom: 1px solid var(--accent-color);
   box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+  background-color: var(--white-text-color);
+
+  /* position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; */
 }
 
 .container {
@@ -209,7 +218,7 @@ img {
   padding: 12px 24px;
   color: var(--primary-brand-color);
   background-color: var(--light-text-color);
-  border: 1px solid #e7e9fc;
+  border: 1px solid var(--accent-color);
   border-radius: 4px;
 }
 
@@ -230,6 +239,48 @@ img {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
   border: 1px solid transparent;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(46, 47, 66, 0.4);
+}
+
+.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 408px;
+  min-height: 584px;
+
+  background-color: var(--modal-background-color);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.close-button {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+
+  width: 24px;
+  height: 24px;
+
+  background-color: var(--accent-color);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
 }
 
 /* Section 1 */
@@ -522,4 +573,31 @@ img {
 .card-link .item-title,
 .card-link .item-description {
   margin-left: 16px;
+}
+
+.thumb {
+  position: relative;
+}
+
+.thumb-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-top: 40px;
+  padding-right: 32px;
+  padding-left: 32px;
+
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--light-text-color);
+  background-color: var(--primary-brand-color);
+
+  opacity: 0;
+}
+
+.card-link:hover .thumb-text,
+.card-link:focus .thumb-text {
+  opacity: 1;
 }
