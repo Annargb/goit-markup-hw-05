@@ -112,6 +112,20 @@ img {
 
 /* Navigation menu */
 
+.menu-item.active {
+  color: var(--hover-color);
+}
+
+.active::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 4px;
+
+  background: var(--hover-color);
+  border-radius: 2px;
+}
+
 .menu-list {
   display: flex;
   gap: 40px;
@@ -126,6 +140,10 @@ img {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--headings-text-color);
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .navigations .logo-nav {
@@ -158,6 +176,10 @@ img {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--primary-text-color);
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Hero */
@@ -213,6 +235,10 @@ img {
   border: none;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
+
+  transition-property: color, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .secondary-button {
@@ -221,6 +247,10 @@ img {
   background-color: var(--light-text-color);
   border: 1px solid var(--accent-color);
   border-radius: 4px;
+
+  transition-property: color, background-color, box-shadow, border;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .secondary-button-item:not(:last-child) {
@@ -282,6 +312,15 @@ img {
   background-color: var(--accent-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
+
+  cursor: pointer;
+}
+
+.icon-close {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(0, 50%);
 }
 
 /* Section 1 */
@@ -416,6 +455,10 @@ img {
   height: 40px;
   background-color: var(--primary-brand-color);
   border-radius: 50%;
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .personal-social-media > .icon-link:hover,
@@ -451,15 +494,15 @@ img {
   border: 1px solid var(--stroke-logo-color);
   border-radius: 4px;
   color: var(--stroke-logo-color);
+
+  transition-property: color, border;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customers-link:hover,
 .customers-link:focus {
   color: var(--hover-color);
-}
-
-.customers-link:hover,
-.customers-link:focus {
   border: 1px solid var(--hover-color);
 }
 
@@ -549,6 +592,10 @@ img {
 
 .card-link {
   display: block;
+
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card-link:hover,
