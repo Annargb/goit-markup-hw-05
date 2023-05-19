@@ -12,7 +12,7 @@
 }
 
 body {
-  /* padding-top: 72px; */
+  padding-top: 72px;
 
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
@@ -62,10 +62,11 @@ img {
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
   background-color: var(--white-text-color);
 
-  /* position: fixed;
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%; */
+  z-index: 100;
+  width: 100%;
 }
 
 .container {
