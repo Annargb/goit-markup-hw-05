@@ -9,6 +9,7 @@
   --stroke-logo-color: #8e8f99;
   --green-hover-color: #31d0aa;
   --modal-background-color: #fcfcfc;
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -113,13 +114,17 @@ img {
 /* Navigation menu */
 
 .menu-item.active {
+  position: relative;
   color: var(--hover-color);
 }
 
 .active::after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
   content: '';
   display: block;
-  width: 48px;
+  width: 100%;
   height: 4px;
 
   background: var(--hover-color);
@@ -143,7 +148,7 @@ img {
 
   transition-property: color;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--timing-function);
 }
 
 .navigations .logo-nav {
@@ -179,7 +184,7 @@ img {
 
   transition-property: color;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--timing-function);
 }
 
 /* Hero */
@@ -238,7 +243,7 @@ img {
 
   transition-property: color, background-color;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--timing-function);
 }
 
 .secondary-button {
@@ -250,7 +255,7 @@ img {
 
   transition-property: color, background-color, box-shadow, border;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--timing-function);
 }
 
 .secondary-button-item:not(:last-child) {
@@ -458,7 +463,7 @@ img {
 
   transition-property: background-color;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--timing-function);
 }
 
 .personal-social-media > .icon-link:hover,
@@ -497,7 +502,7 @@ img {
 
   transition-property: color, border;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--timing-function);
 }
 
 .customers-link:hover,
@@ -595,7 +600,7 @@ img {
 
   transition-property: box-shadow;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--timing-function);
 }
 
 .card-link:hover,
@@ -625,6 +630,8 @@ img {
 
 .thumb {
   position: relative;
+
+  overflow: hidden;
 }
 
 .thumb-text {
@@ -642,10 +649,11 @@ img {
   color: var(--light-text-color);
   background-color: var(--primary-brand-color);
 
-  opacity: 0;
+  transform: translateY(100%);
+  transition: transform 250ms var(--timing-function);
 }
 
 .card-link:hover .thumb-text,
 .card-link:focus .thumb-text {
-  opacity: 1;
+  transform: translateY(0);
 }
