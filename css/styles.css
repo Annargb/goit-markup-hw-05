@@ -451,8 +451,8 @@ img {
   border-radius: 4px;
   color: var(--stroke-logo-color);
 
-  transition: color 250ms var(--timing-function),
-    border-color 250ms var(--timing-function);
+  transition: border-color 250ms var(--timing-function),
+    color 250ms var(--timing-function);
 }
 
 .customers-link:hover,
